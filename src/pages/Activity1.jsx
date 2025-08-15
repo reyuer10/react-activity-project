@@ -6,7 +6,7 @@ function Activity1() {
   const [secondNumber, setSecondNumber] = useState(0);
   const [currentNumber, setCurrentNumber] = useState(null);
 
-  const arrNumber = [1, 2, 4, 5, 6, 7, 8, 9, 0];
+  const arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const handleSelectCurrentNumber = (curr) => {
     setCurrentNumber(curr);
