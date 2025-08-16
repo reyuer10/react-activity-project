@@ -1,12 +1,16 @@
-import React from 'react'
-import Activity1 from './pages/Activity1'
+import { Routes, Route } from "react-router-dom";
+import Activity1 from "./pages/Activity1";
+import DashboardActivity from "./pages/DashboardActivity";
 
 function App() {
   return (
-    <div className='h-screen border flex items-center justify-center'>
-      <Activity1 /> 
-    </div>
-  )
+    <>
+      <Routes>
+        <Route path="/" element={<DashboardActivity />} />
+        <Route path="ActivityOne/select-number-total" element={<Activity1 />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;

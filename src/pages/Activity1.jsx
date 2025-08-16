@@ -24,43 +24,59 @@ function Activity1() {
     }
   };
 
-
-  const calculateNum = firstNumber + secondNumber
+  const calculateNum = firstNumber + secondNumber;
   return (
-    <div className="space-y-4">
+    <div className="h-screen flex flex-col justify-center items-center">
+      <div className="space-y-4">
         <div>
-            <p><span className="font-bold">First:</span> Select current number.</p>
+          <p>
+            <span className="font-bold">First:</span> Select current number.
+          </p>
         </div>
-      <div className="space-x-4 text-xl">
-        <span
-        role="button"
-         onClick={() => handleSelectCurrentNumber("1")}
-        className={currentNumber == 1 ? "cursor-pointer ring-2 ring-blue-500 px-4 p-2  rounded" : " cursor-pointer ring px-4 p-2 rounded"}>{firstNumber}</span>
-        <span>+</span>
-        <span
-        role="button"
-                 onClick={() => handleSelectCurrentNumber("2")}
-        className={currentNumber == 2 ? "cursor-pointer ring-2 ring-blue-500 px-4 p-2  rounded" : "cursor-pointer ring px-4 p-2 rounded"}>{secondNumber}</span>
-        <span>=</span>
-        <span>{calculateNum}</span>
+        <div className="space-x-4 text-xl">
+          <span
+            role="button"
+            onClick={() => handleSelectCurrentNumber("1")}
+            className={
+              currentNumber == 1
+                ? "cursor-pointer ring-2 ring-blue-500 px-4 p-2  rounded"
+                : " cursor-pointer ring px-4 p-2 rounded"
+            }
+          >
+            {firstNumber}
+          </span>
+          <span>+</span>
+          <span
+            role="button"
+            onClick={() => handleSelectCurrentNumber("2")}
+            className={
+              currentNumber == 2
+                ? "cursor-pointer ring-2 ring-blue-500 px-4 p-2  rounded"
+                : "cursor-pointer ring px-4 p-2 rounded"
+            }
+          >
+            {secondNumber}
+          </span>
+          <span>=</span>
+          <span>{calculateNum}</span>
+        </div>
+        <div>
+          <span className="font-bold">Second:</span> Select input number.
+        </div>
+        <div className="space-x-2 my-4">
+          {arrNumber.map((num, index) => {
+            return (
+              <button
+                onClick={() => handleSelectNumber(num)}
+                className=" ring ring-black font-bold p-4 px-6 rounded "
+                key={index}
+              >
+                {num}
+              </button>
+            );
+          })}
+        </div>
       </div>
-      <div>
-        <span className="font-bold">Second:</span> Select input number.
-      </div>
-      <div className="space-x-2 my-4">
-        {arrNumber.map((num, index) => {
-          return (
-            <button
-              onClick={() => handleSelectNumber(num)}
-              className=" ring ring-black font-bold p-4 px-6 rounded "
-              key={index}
-            >
-              {num}
-            </button>
-          );
-        })}
-      </div>
-      
     </div>
   );
 }
