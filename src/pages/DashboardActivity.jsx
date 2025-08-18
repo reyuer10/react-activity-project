@@ -6,7 +6,7 @@ function DashboardActivity() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen p-4">
+    <div className="h-screen p-4 flex items-baseline">
       {activityData.map((act, index) => {
         return (
           <button
@@ -42,7 +42,7 @@ function DashboardActivity() {
                 </g>
               </svg>
             </span>
-            <span>
+            <span className="text-sm">
                 {act.name}
             </span>
           </button>
